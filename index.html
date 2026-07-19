@@ -55,10 +55,10 @@
         <p>أنا بحبك جداً ومقدرش أعيش من غيرك، أنتِ أجمل حاجة حصلت في دنيتي كلها.. ربنا يخليكي ليا وميحرمنيش منك أبداً ويجمعنا على خير يا رب.</p>
         <p style="font-size: 18px; font-style: italic; color: #ff4d6d;">"خليني في حضنك يا حبيبي ده في حضنك بهدى وبرتاح..." 🎵</p>
         
-        <!-- مشغل الموسيقى -->
+        <!-- مشغل الموسيقى برابط جديد وسريع ومضمون -->
         <div id="player-container" class="music-player">
             <audio id="bg-music" controls loop>
-                <source src="https://server11.mp3quran.net/b_sultan/tamnoony_3enek.mp3" type="audio/mpeg">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
                 متصفحك لا يدعم تشغيل الصوت.
             </audio>
         </div>
@@ -75,7 +75,7 @@
             
             var audio = document.getElementById("bg-music");
             audio.play().catch(function(error) {
-                console.log("المتصفح منع التشغيل التلقائي.");
+                console.log("المتصفح منع التشغيل التلقائي، لكن المشغل متاح لها تضغط بنفسها.");
             });
         } else {
             alert("كلمة السر غلط يا روحي، حاولي تاني! 😘");
