@@ -56,10 +56,10 @@
         <p>أنا بحبك جداً ومقدرش أعيش من غيرك، أنتِ أجمل حاجة حصلت في دنيتي كلها.. ربنا يخليكي ليا وميحرمنيش منك أبداً ويجمعنا على خير يا رب.</p>
         <p style="font-size: 18px; font-style: italic; color: #ff4d6d;">"خليني في حضنك يا حبيبي ده في حضنك بهدى وبرتاح..." 🎵</p>
         
-        <!-- مشغل الأغنية الأصلية لبهاء سلطان برابط مباشر وسريع -->
+        <!-- مشغل الأغنية من السيرفر الخاص بك مباشرة -->
         <div class="music-container">
             <audio id="bg-music" controls loop>
-                <source src="https://bahaa-sultan.mp3-arshef.com/download.php?id=3728" type="audio/mpeg">
+                <source src="music.mp3" type="audio/mpeg">
                 متصفحك لا يدعم تشغيل الصوت.
             </audio>
         </div>
@@ -75,7 +75,7 @@
             
             var audio = document.getElementById("bg-music");
             audio.play().catch(function(error) {
-                console.log("التشغيل التلقائي محجوب.");
+                console.log("التشغيل التلقائي محجوب بحاجة لتفاعل أولاً.");
             });
         } else {
             alert("كلمة السر غلط يا روحي، حاولي تاني! 😘");
