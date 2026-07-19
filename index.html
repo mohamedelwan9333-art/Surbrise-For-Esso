@@ -36,9 +36,9 @@
         }
         button:hover { background-color: #ff1a43; }
         #love-message { display: none; margin-top: 20px; font-size: 20px; line-height: 1.6; }
-        .music-player { margin-top: 20px; display: block; }
-        audio { width: 100%; max-width: 300px; }
         img { max-width: 100%; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        /* إخفاء فيديو اليوتيوب تماماً عشان يشتغل كصوت في الخلفية */
+        #youtube-player { display: none; }
     </style>
 </head>
 <body>
@@ -52,20 +52,15 @@
     </div>
 
     <div id="love-message">
-        <!-- هنا الصورة رجعت تاني فوق الكلام -->
-        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=600" alt="Love">
+        <!-- صورتها اللي أنت رفعتها -->
+        <img src="pic.jpg" alt="أميرتي إيسو">
         
         <h2>كل سنة وأنتِ معايا يا كل حياتي يا إيسو ❤️</h2>
         <p>أنا بحبك جداً ومقدرش أعيش من غيرك، أنتِ أجمل حاجة حصلت في دنيتي كلها.. ربنا يخليكي ليا وميحرمنيش منك أبداً ويجمعنا على خير يا رب.</p>
         <p style="font-size: 18px; font-style: italic; color: #ff4d6d;">"خليني في حضنك يا حبيبي ده في حضنك بهدى وبرتاح..." 🎵</p>
         
-        <!-- مشغل الموسيقى برابط بهاء سلطان الجديد والسريع جداً -->
-        <div id="player-container" class="music-player">
-            <audio id="bg-music" controls loop>
-                <source src="https://ccma.ams3.digitaloceanspaces.com/b_sultan_tamnony.mp3" type="audio/mpeg">
-                متصفحك لا يدعم تشغيل الصوت.
-            </audio>
-        </div>
+        <!-- مشغل يوتيوب مخفي للأغنية -->
+        <iframe id="youtube-player" src="https://www.youtube.com/embed/gI8g5o3Gsm4?enablejsapi=1" allow="autoplay"></iframe>
     </div>
 </div>
 
@@ -76,11 +71,9 @@
             document.getElementById("login-form").style.display = "none";
             document.getElementById("love-message").style.display = "block";
             
-            var audio = document.getElementById("bg-music");
-            // محاولة التشغيل التلقائي
-            audio.play().catch(function(error) {
-                console.log("المتصفح منع التشغيل التلقائي.");
-            });
+            // تشغيل أغنية بهاء سلطان من يوتيوب تلقائياً
+            var player = document.getElementById("youtube-player");
+            player.src += "&autoplay=1";
         } else {
             alert("كلمة السر غلط يا روحي، حاولي تاني! 😘");
         }
