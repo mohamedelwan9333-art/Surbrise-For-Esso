@@ -34,16 +34,22 @@
             color: white;
             cursor: pointer;
             border: none;
-            transition: 0.3s;
         }
         button:hover { background-color: #ff1a43; }
         #love-message { display: none; margin-top: 20px; font-size: 20px; line-height: 1.6; }
-        .music-btn {
-            background-color: #28a745;
-            margin-top: 15px;
-            display: inline-block;
+        
+        /* مشغل يوتيوب شيك ومتناسق مع الصفحة */
+        .video-container {
+            margin-top: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        .music-btn:hover { background-color: #218838; }
+        iframe {
+            width: 100%;
+            height: 250px;
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -59,14 +65,12 @@
     <div id="love-message">
         <h2>كل سنة وأنتِ معايا يا كل حياتي يا إيسو ❤️</h2>
         <p>أنا بحبك جداً ومقدرش أعيش من غيرك، أنتِ أجمل حاجة حصلت في دنيتي كلها.. ربنا يخليكي ليا وميحرمنيش منك أبداً ويجمعنا على خير يا رب.</p>
-        <p style="font-size: 18px; font-style: italic; color: #ff4d6d;">"خليني في حضنك يا حبيبي ده في حضنك بهدى وبرتاح..." 🎵</p>
+        <p style="font-size: 18px; font-style: italic; color: #ff4d6d; margin-bottom: 20px;">"خليني في حضنك يا حبيبي ده في حضنك بهدى وبرتاح..." 🎵</p>
         
-        <!-- زرار إجبار تشغيل الصوت المباشر -->
-        <button class="music-btn" onclick="playMusic()">اضغطي هنا لتشغيل الأغنية 🎵</button>
-        
-        <audio id="bg-music" loop>
-            <source src="https://archive.org/download/bahaa-sultan-tamnony-3lek/%D8%A8%D9%87%D8%A7%D8%A1%20%D8%B3%D9%84%D8%B7%D8%A7%D9%86%20-%20%D8%B7%D9%85%D9%86%D9%88%D9%86%D9%8A%20%D8%B9%D9%84%D9%8A%D9%83.mp3" type="audio/mpeg">
-        </audio>
+        <!-- مشغل يوتيوب الرسمي المباشر لأغنية بهاء سلطان -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/gI8g5o3Gsm4" allowfullscreen></iframe>
+        </div>
     </div>
 </div>
 
@@ -79,15 +83,6 @@
         } else {
             alert("كلمة السر غلط يا روحي، حاولي تاني! 😘");
         }
-    }
-
-    function playMusic() {
-        var audio = document.getElementById("bg-music");
-        audio.play().then(function() {
-            alert("الأغنية اشتغلت بنجاح! الاستماع ممتع يا أميرتي ❤️");
-        }).catch(function(error) {
-            alert("برضه المتصفح مانعها؟ جربي تفتحي اللينك في متصفح تاني زي جوجل كروم العادي.");
-        });
     }
 </script>
 
