@@ -37,19 +37,8 @@
         }
         button:hover { background-color: #ff1a43; }
         #love-message { display: none; margin-top: 20px; font-size: 20px; line-height: 1.6; }
-        
-        /* مشغل يوتيوب شيك ومتناسق مع الصفحة */
-        .video-container {
-            margin-top: 20px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        iframe {
-            width: 100%;
-            height: 250px;
-            border: none;
-        }
+        .music-container { margin-top: 25px; }
+        audio { width: 100%; max-width: 300px; }
     </style>
 </head>
 <body>
@@ -65,11 +54,14 @@
     <div id="love-message">
         <h2>كل سنة وأنتِ معايا يا كل حياتي يا إيسو ❤️</h2>
         <p>أنا بحبك جداً ومقدرش أعيش من غيرك، أنتِ أجمل حاجة حصلت في دنيتي كلها.. ربنا يخليكي ليا وميحرمنيش منك أبداً ويجمعنا على خير يا رب.</p>
-        <p style="font-size: 18px; font-style: italic; color: #ff4d6d; margin-bottom: 20px;">"خليني في حضنك يا حبيبي ده في حضنك بهدى وبرتاح..." 🎵</p>
+        <p style="font-size: 18px; font-style: italic; color: #ff4d6d;">"خليني في حضنك يا حبيبي ده في حضنك بهدى وبرتاح..." 🎵</p>
         
-        <!-- مشغل يوتيوب الرسمي المباشر لأغنية بهاء سلطان -->
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/gI8g5o3Gsm4" allowfullscreen></iframe>
+        <!-- مشغل صوت ظاهر وواضح برابط مباشر شغال وسريع -->
+        <div class="music-container">
+            <audio id="bg-music" controls loop>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                متصفحك لا يدعم تشغيل الصوت.
+            </audio>
         </div>
     </div>
 </div>
@@ -80,6 +72,12 @@
         if (password === "love") { 
             document.getElementById("login-form").style.display = "none";
             document.getElementById("love-message").style.display = "block";
+            
+            // محاولة تشغيل تلقائي فور فتح الرسالة
+            var audio = document.getElementById("bg-music");
+            audio.play().catch(function(error) {
+                console.log("التشغيل التلقائي بحاجة لتفاعل المستخدم أولاً.");
+            });
         } else {
             alert("كلمة السر غلط يا روحي، حاولي تاني! 😘");
         }
