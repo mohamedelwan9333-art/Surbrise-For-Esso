@@ -56,7 +56,7 @@
         <p>أنا بحبك جداً ومقدرش أعيش من غيرك، أنتِ أجمل حاجة حصلت في دنيتي كلها.. ربنا يخليكي ليا وميحرمنيش منك أبداً ويجمعنا على خير يا رب.</p>
         <p style="font-size: 18px; font-style: italic; color: #ff4d6d;">"خليني في حضنك يا حبيبي ده في حضنك بهدى وبرتاح..." 🎵</p>
         
-        <!-- مشغل صوت ظاهر وواضح برابط مباشر شغال وسريع -->
+        <!-- مشغل صوت مباشر شغال ونضيف -->
         <div class="music-container">
             <audio id="bg-music" controls loop>
                 <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
@@ -73,10 +73,9 @@
             document.getElementById("login-form").style.display = "none";
             document.getElementById("love-message").style.display = "block";
             
-            // محاولة تشغيل تلقائي فور فتح الرسالة
             var audio = document.getElementById("bg-music");
             audio.play().catch(function(error) {
-                console.log("التشغيل التلقائي بحاجة لتفاعل المستخدم أولاً.");
+                console.log("التشغيل التلقائي محجوب.");
             });
         } else {
             alert("كلمة السر غلط يا روحي، حاولي تاني! 😘");
